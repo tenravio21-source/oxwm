@@ -3,7 +3,7 @@
 -- Workspace (tag) navigation
 -- Tags are 0-indexed internally
 
-for i = 1, 9 do
+for i = 1, 3 do
 	local idx = i - 1
 	local key = tostring(i)
 

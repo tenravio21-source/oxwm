@@ -58,12 +58,12 @@ alias wget = wget -c  # Continue interrupted downloads
 # Environment variables
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
-$env.BAT_THEME = "gruvbox-light"
+$env.BAT_THEME = "base16"
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 $env.config.buffer_editor = "nvim"
 $env.config.show_banner = false
 
-$env.FZF_DEFAULT_OPTS = "--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}' --color=fg:#3c3836,bg:#fbf1c7,hl:#9d0006 --color=fg+:#3c3836,bg+:#ebdbb2,hl+:#9d0006 --color=info:#af3a03,prompt:#458588,pointer:#af3a03 --color=marker:#af3a03,spinner:#af3a03,header:#458588"
+$env.FZF_DEFAULT_OPTS = "--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}' --color=fg:#ffffff,bg:#16181a,hl:#ff6e5e --color=fg+:#ffffff,bg+:#3c4048,hl+:#ff6e5e --color=info:#bd5eff,prompt:#5ea1ff,pointer:#5eff6c --color=marker:#5eff6c,spinner:#bd5eff,header:#5ea1ff"
 
 # Quick directory listing with icons (simplified)
 def lsg [] {

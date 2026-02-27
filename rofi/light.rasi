@@ -1,30 +1,30 @@
 * {
-  /* Primary Background (Gruvbox Light0) */
-  bg: #fbf1c7; 
+  /* Primary Background (Cyberdream Background) */
+  bg: #16181a; 
   
-  /* Hover/Accent (Gruvbox Purple) */
-  hv: #689d6a; 
+  /* Hover/Accent (Cyberdream Green) */
+  hv: #5eff6c; 
   
-  /* Primary/Foreground (Gruvbox Dark0) */
-  primary: #d5c4a1; 
+  /* Borders/Secondary (Cyberdream Grey) */
+  primary: #3c4048; 
   
-  /* Urgent/Dark Accent (Gruvbox Blue) */
-  ug: #076678;
+  /* Urgent Accent (Cyberdream Red) */
+  ug: #ff6e5e;
   
   /* Text/Font Settings */
   font: "Monospace 11";
   background-color: @bg;
   
-  /* Border & Highlights */
-  border: 0px;
-  kl: #458588;    /* Gruvbox Blue */
-  black: #d5c4a1; /* Using Dark0 for black text consistency */
+  /* Key Labels & Links (Cyberdream Blue) */
+  kl: #5ea1ff;    
+  
+  /* Contrast Text (Background color for text on bright buttons) */
+  black: #16181a; 
 
-  /* Transparency Layer */
-  transparent: rgba(251, 241, 199, 0); /* Matched to bg hex */
+  /* Transparency Layer (Matched to Cyberdream bg hex) */
+  transparent: rgba(22, 24, 26, 0); 
 }
 
-// defines different aspects of the window
 window {
   width: 33em;
   height: 20em;
@@ -87,7 +87,7 @@ listview {
 element {
   padding: 0.5em;
   vertical-align: 1;
-  color: @kl;
+  color: #ffffff; /* Default text color to White */
   font: inherit;
 }
 
@@ -98,7 +98,7 @@ element-text {
 }
 
 element selected.normal {
-  color: @black;
+  color: @black; /* Dark text on bright Green background */
   background-color: @hv;
 }
 
@@ -114,7 +114,7 @@ element-icon {
 }
 
 element normal urgent {
-  background-color: @primary;
+  background-color: @ug; /* Use Red for urgent items */
 }
 
 element selected active {
@@ -125,7 +125,7 @@ element selected active {
 button {
   padding: 6px;
   color: @primary;
-  horizonatal-align: 0.5;
+  horizontal-align: 0.5;
 
   border: 2px 0px 2px 2px;
   border-radius: 4px 0px 0px 4px;
@@ -135,4 +135,5 @@ button {
 button selected normal {
   border: 2px 0px 2px 2px;
   border-color: @primary;
+  color: @kl; /* Highlight selected button with Blue */
 }

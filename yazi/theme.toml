@@ -1,10 +1,11 @@
 # ~/.config/yazi/theme.toml
 
 [manager]
-cwd = { fg = "#458588" } # Blue
+# Using the bright Cyberdream blue for the current working directory
+cwd = { fg = "#5ea1ff" } 
 
-# Hovered item
-hovered         = { fg = "#3c3836", bg = "#ebdbb2" }
+# Hovered item: Dark text on the Cyberdream orange/yellow accent
+hovered         = { fg = "#16181a", bg = "#ffbd5e" }
 # Selected items
 preview_hovered = { underline = true }
 
@@ -13,16 +14,24 @@ separator_open  = ""
 separator_close = ""
 
 [status.mode]
-normal = { bg = "#458588", fg = "#fbf1c7", bold = true }
-select = { bg = "#98971a", fg = "#fbf1c7", bold = true }
-unset  = { bg = "#b16286", fg = "#fbf1c7", bold = true }
+# Mode colors using the Cyberdream Blue, Green, and Purple
+normal = { bg = "#5ea1ff", fg = "#16181a", bold = true }
+select = { bg = "#5eff6c", fg = "#16181a", bold = true }
+unset  = { bg = "#bd5eff", fg = "#16181a", bold = true }
 
 [filetype]
 rules = [
-    { mime = "image/*", fg = "#b16286" }, # Purple
-    { mime = "video/*", fg = "#b16286" },
-    { mime = "audio/*", fg = "#b16286" },
-    { mime = "text/*",  fg = "#3c3836" },
-    { name = "*.zip",   fg = "#d79921" }, # Yellow
-    { name = "*.tar",   fg = "#d79921" },
+    # Media: Using the Cyberdream Purple
+    { mime = "image/*", fg = "#bd5eff" }, 
+    { mime = "video/*", fg = "#bd5eff" },
+    { mime = "audio/*", fg = "#bd5eff" },
+    
+    # Text: Pure white for maximum readability
+    { mime = "text/*",  fg = "#ffffff" },
+    
+    # Archives: Using the Cyberdream Yellow
+    { name = "*.zip",   fg = "#f1ff5e" }, 
+    { name = "*.tar",   fg = "#f1ff5e" },
+    { name = "*.gz",    fg = "#f1ff5e" },
+    { name = "*.7z",    fg = "#f1ff5e" },
 ]
