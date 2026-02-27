@@ -1,49 +1,62 @@
--- File: lua/plugins/lsp.lua
-
 return {
-	-- 1. Mason plugin for managing LSP servers
 	{
 		"williamboman/mason.nvim",
 		cmd = "Mason",
-		config = function()
-			require("mason").setup({
-				ui = {
-					border = "rounded",
-				},
-			})
-		end,
-	},
-
-	-- 2. Mason-Lspconfig for easy server integration
-	{
-		"williamboman/mason-lspconfig.nvim",
-		lazy = true,
-		cmd = { "LspInstall", "LspUninstall" },
-		dependencies = { "williamboman/mason.nvim" },
 		opts = {
-			auto_install = true,
+			ui = { border = "rounded" },
 		},
 	},
-
-	-- 3. nvim-lspconfig for the actual LSP setup
 	{
 		"neovim/nvim-lspconfig",
-		lazy = true,
 		event = { "BufReadPre", "BufNewFile" },
-		dependencies = { "williamboman/mason-lspconfig.nvim" },
-		opts = { diagnostics = { virtual_text = false } },
-		config = function()
-			require("core.lsp").setup()
-		end,
-	},
-
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		event = "VeryLazy",
-		priority = 1000,
-		opts = {
-			preset = "modern",
-			transparent_bg = true,
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"saghen/blink.cmp",
 		},
+		opts = {
+			servers = {
+				lua_ls = {
+					settings = {
+						Lua = {
+							runtime = { version = "LuaJIT" },
+							diagnostics = { globals = { "vim" } },
+							workspace = {
+								checkThirdParty = false,
+								library = vim.api.nvim_get_runtime_file("", true),
+							},
+						},
+					},
+				},
+				pyrefly = {},
+				rust_analyzer = {},
+				gopls = {},
+				dartls = {},
+			},
+		},
+		config = function(_, opts)
+			require("mason-lspconfig").setup({})
+
+			local icons = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = "󰋽 " }
+			vim.diagnostic.config({
+				virtual_text = false,
+				severity_sort = true,
+				float = { border = "rounded", source = "if_many" },
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = icons.Error,
+						[vim.diagnostic.severity.WARN] = icons.Warn,
+						[vim.diagnostic.severity.HINT] = icons.Hint,
+						[vim.diagnostic.severity.INFO] = icons.Info,
+					},
+				},
+			})
+
+			local blink = require("blink.cmp")
+			for server, server_opts in pairs(opts.servers) do
+				server_opts.capabilities = blink.get_lsp_capabilities(server_opts.capabilities)
+				vim.lsp.config(server, server_opts)
+				vim.lsp.enable(server)
+			end
+		end,
 	},
 }

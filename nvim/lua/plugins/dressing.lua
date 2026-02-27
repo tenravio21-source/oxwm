@@ -1,31 +1,17 @@
 return {
 	"stevearc/dressing.nvim",
-	lazy = true,
-	init = function()
-		vim.ui.select = function(...)
-			require("lazy").load({ plugins = { "dressing.nvim" } })
-			return vim.ui.select(...)
-		end
-		vim.ui.input = function(...)
-			require("lazy").load({ plugins = { "dressing.nvim" } })
-			return vim.ui.input(...)
-		end
-	end,
+	event = "VeryLazy",
 	opts = {
 		input = {
-			border = "rounded",
-			relative = "cursor",
-			prefer_width = 40,
+			enabled = true,
+			default_prompt = "➤ ",
+			win_opts = {
+				border = "rounded",
+				winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+			},
 		},
 		select = {
-			enabled = true,
-			backend = { "telescope", "nui", "builtin" },
-			telescope = require("telescope.themes").get_dropdown({
-				layout_config = {
-					width = 0.5,
-					height = 0.4,
-				},
-			}),
+			enabled = false,
 		},
 	},
 }

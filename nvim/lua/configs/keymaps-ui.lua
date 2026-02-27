@@ -7,19 +7,50 @@ basic_map("n", "<leader>h", "<cmd>Alpha<CR>", "Alpha")
 basic_map("n", ";", ":", "Esc")
 
 -- Reload nvim (LINE 8/9 area)
-basic_map("n", "<leader>ur", "<Cmd>update<CR><Cmd>source<CR>", "Reload nvim")
+safe_map("n", "<leader>ur", function()
+	vim.cmd("write")
+	vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
+	vim.notify("Config Reloaded!", vim.log.levels.INFO)
+end, "Reload nvim")
 
 safe_map("n", "<leader>ut", function()
-	require("telescope.builtin").colorscheme({
-		enable_preview = true,
-		previewer = false,
-		layout_config = {
-			width = 0.3,
+	require("fzf-lua").colorschemes({
+		winopts = {
 			height = 0.5,
+			width = 0.30,
 		},
-		ignore_builtins = true,
+		ignore_patterns = {
+			"^blue$",
+			"^pablo",
+			"^peachpuff",
+			"^retrobox",
+			"^sorbet",
+			"^unokai",
+			"^wildcharm",
+			"^zaibatsu",
+			"^darkblue$",
+			"^default$",
+			"^delek$",
+			"^desert$",
+			"^elflord$",
+			"^evening$",
+			"^habamax$",
+			"^industry$",
+			"^koehler$",
+			"^lunaperche$",
+			"^morning$",
+			"^murphy$",
+			"^pelflor$",
+			"^ron$",
+			"^shine$",
+			"^slate$",
+			"^torte$",
+			"^zellner$",
+			"^quiet$",
+			"^vim$",
+		},
 	})
-end, "Telescope: Colorscheme Picker (Live Preview)")
+end, "Fzf-Lua: Colorscheme Picker")
 
 -- Show Lazy logs
 basic_map("n", "<leader>pl", "<cmd>Lazy log<CR>", "Show Lazy logs")
@@ -52,11 +83,3 @@ safe_map("n", "<leader>HP", function()
 	vim.fn.setreg("+", vim.fn.expand("%:p:h"))
 	vim.notify("Copied: " .. vim.fn.expand("%:p:h"), vim.log.levels.INFO, { title = "Path Copy" })
 end, "Copy current file directory")
-
--- ... (rest of the code) ...
--- Quick access to important files
-local builtin = require("telescope.builtin")
--- Using safe_map here just in case Telescope is not loaded, though basic_map is also sufficient.
-safe_map("n", "<leader>fN", function()
-	builtin.find_files({ cwd = "~/.config/nvim" })
-end, "Edit Neovim Config (Telescope)")

@@ -179,13 +179,21 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 -- Show relative line numbers in normal mode, absolute in insert mode
 vim.api.nvim_create_autocmd({ "InsertEnter" }, {
-	pattern = "*",
-	command = "setlocal norelativenumber",
+	callback = function()
+		if vim.wo.relativenumber then
+			vim.t.relativenumber_was_on = true
+			vim.wo.relativenumber = false
+		end
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "InsertLeave" }, {
-	pattern = "*",
-	command = "setlocal relativenumber",
+	callback = function()
+		if vim.t.relativenumber_was_on then
+			vim.wo.relativenumber = true
+			vim.t.relativenumber_was_on = false
+		end
+	end,
 })
 
 vim.api.nvim_create_user_command("ToggleContrast", function()
@@ -200,11 +208,3 @@ vim.api.nvim_create_user_command("ToggleContrast", function()
 end, {})
 
 vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { link = "Comment" })
-
--- Auto-compile on save for Java files to trigger DevTools
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = "*.java",
-	callback = function()
-		vim.fn.jobstart("mvn compile")
-	end,
-})

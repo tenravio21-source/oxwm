@@ -1,11 +1,4 @@
-local keymap_configs = {
-	"core",
-	"terminal",
-	"lsp",
-	"git",
-	"search",
-	"ui",
-}
+local keymap_configs = { "core", "lsp", "git", "ui" }
 
 for _, config_name in ipairs(keymap_configs) do
 	local success, _ = pcall(require, "configs.keymaps-" .. config_name)
