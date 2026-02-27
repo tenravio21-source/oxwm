@@ -7,7 +7,7 @@ return {
 			default_prompt = "➤ ",
 			win_opts = {
 				border = "rounded",
-				winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+				winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
 			},
 		},
 		select = {
