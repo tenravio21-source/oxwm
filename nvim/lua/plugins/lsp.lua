@@ -31,6 +31,7 @@ return {
 				rust_analyzer = {},
 				gopls = {},
 				dartls = {},
+				clangd = {},
 			},
 		},
 		config = function(_, opts)
