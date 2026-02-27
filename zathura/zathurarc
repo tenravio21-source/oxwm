@@ -1,31 +1,37 @@
-# --- Gruvbox Light Colors ---
-set default-bg                "#fbf1c7" # bg
-set default-fg                "#3c3836" # fg
+# --- Cyberdream Colors ---
+set default-bg                "#16181a" # Background
+set default-fg                "#ffffff" # Foreground (White)
 
 # Statusbar
-set statusbar-bg              "#d5c4a1" # sep
-set statusbar-fg              "#3c3836" # fg
+set statusbar-bg              "#3c4048" # Grey/Selection
+set statusbar-fg              "#ffffff" # White
 
 # Input bar
-set inputbar-bg               "#fbf1c7" # bg
-set inputbar-fg               "#8f3f71" # purple
+set inputbar-bg               "#16181a" # Background
+set inputbar-fg               "#bd5eff" # Purple/Magenta accent
 
 # Notification colors
-set notification-error-bg     "#cc241d" # red
-set notification-error-fg     "#fbf1c7" # bg
-set notification-warning-bg    "#cc241d" # red
-set notification-warning-fg    "#fbf1c7" # bg
+set notification-error-bg     "#ff6e5e" # Red
+set notification-error-fg     "#ffffff" # White
+set notification-warning-bg   "#f1ff5e" # Yellow
+set notification-warning-fg   "#16181a" # Background
 
 # Highlight colors (Search/Selection)
-set highlight-color           "#98971a" # green
-set highlight-active-color    "#458588" # blue
+set highlight-color           "#5eff6c" # Neon Green
+set highlight-active-color    "#5ea1ff" # Blue
 
-# --- Recolor Mode (Dark Mode toggle with 'ctrl+r') ---
+# --- Recolor Mode (The "Dark Mode" for PDFs) ---
 set recolor                   "true"
-set recolor-lightcolor        "#fbf1c7" # bg
-set recolor-darkcolor         "#3c3836" # fg
+set recolor-lightcolor        "#16181a" # This becomes the new "Paper" color
+set recolor-darkcolor         "#ffffff" # This becomes the new "Ink" color
 
-# Adjusting the adjustment for better contrast
+# Loading Screen
 set render-loading            "true"
-set render-loading-fg         "#3c3836"
-set render-loading-bg         "#fbf1c7"
+set render-loading-fg         "#ffffff"
+set render-loading-bg         "#16181a"
+
+# Completion window (Tab menu)
+set completion-bg             "#3c4048"
+set completion-fg             "#5ef1ff"
+set completion-highlight-bg   "#5ea1ff"
+set completion-highlight-fg   "#16181a"

@@ -1,0 +1,9 @@
+name: cyberdream-dark
+primary: "#5ea1ff"     # Cyberdream Blue
+secondary: "#5ef1ff"   # Cyberdream Cyan
+accent: "#bd5eff"      # Cyberdream Purple
+background: "#16181a"  # Darkest Base
+surface: "#3c4048"     # Grey Surface (Selection/Borders)
+error: "#ff6e5e"       # Neon Red
+success: "#5eff6c"     # Neon Green
+warning: "#f1ff5e"     # Neon Yellow

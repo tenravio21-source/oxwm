@@ -1,16 +1,15 @@
 [global]
     ### Font Settings ###
-    # Using Maple Mono NF at size 10 for a crisp look
     font = Maple Mono NF 10
     
     # Vertical padding between lines
     line_height = 4
     
     ### Frame and Spacing ###
-    # A 3px frame helps the light background stand out against your wallpaper
+    # Using the selection grey for a subtle frame
     frame_width = 3
-    frame_color = "#928374"      # Gruvbox Gray
-    separator_color = "#d5c4a1"  # Gruvbox Sep
+    frame_color = "#3c4048"
+    separator_color = "#3c4048"
     
     # Padding within the notification
     padding = 12
@@ -19,19 +18,20 @@
 
 [base16_low]
     msg_urgency = "low"
-    background = "#fbf1c7"
-    foreground = "#928374"
+    background = "#16181a"
+    foreground = "#3c4048"  # Dimmer grey for low priority
     timeout = 3
 
 [base16_normal]
     msg_urgency = "normal"
-    background = "#fbf1c7"
-    foreground = "#3c3836"
+    background = "#16181a"
+    foreground = "#ffffff"  # Crisp white for standard alerts
+    frame_color = "#5ea1ff" # Blue border to catch the eye
     timeout = 3
 
 [base16_critical]
     msg_urgency = "critical"
-    background = "#cc241d"
-    foreground = "#fbf1c7"
-    frame_color = "#9d0006"     # Darker red for the border on critical
+    background = "#16181a"
+    foreground = "#ff6e5e"  # Neon Red text
+    frame_color = "#ff6e5e" # Neon Red border for maximum urgency
     timeout = 0

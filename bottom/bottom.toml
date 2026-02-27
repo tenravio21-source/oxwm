@@ -1,19 +1,35 @@
 # ~/.config/bottom/bottom.toml
 
 [colors]
-# The main background and text
-table_header_color = "#458588" # Blue
-all_cpu_color = "#cc241d"      # Red
-avg_cpu_color = "#b16286"      # Purple
-cpu_core_colors = ["#cc241d", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a"]
-ram_color = "#98971a"          # Green
-cache_color = "#076678"        # Aqua
-swap_color = "#d79921"         # Yellow
-rx_color = "#98971a"           # Green
-tx_color = "#cc241d"           # Red
-border_color = "#ebdbb2"       # Surface/Light Grey
-highlighted_border_color = "#458588" # Blue
-text_color = "#3c3836"         # Dark Text
-selected_text_color = "#fbf1c7" # Background color for contrast
-selected_bg_color = "#076678"   # Blue highlight
-graph_color = "#928374"        # Grey
+# Main Background and Text
+# Cyberdream Blue for headers and White for general text
+table_header_color = "#5ea1ff"
+text_color = "#ffffff"
+
+# CPU Colors
+# Using the Neon Red and Purple for the main CPU metrics
+all_cpu_color = "#ff6e5e"
+avg_cpu_color = "#bd5eff"
+# Cycling through the full Cyberdream neon spectrum for cores
+cpu_core_colors = ["#ff6e5e", "#5eff6c", "#f1ff5e", "#5ea1ff", "#bd5eff", "#5ef1ff"]
+
+# Memory and Network
+ram_color = "#5eff6c"          # Neon Green
+cache_color = "#5ef1ff"        # Cyan
+swap_color = "#f1ff5e"         # Neon Yellow
+rx_color = "#5eff6c"           # Green for receiving
+tx_color = "#ff6e5e"           # Red for transmitting
+
+# Borders and Selection
+# Subtle grey for borders, popping Blue for the active pane
+border_color = "#3c4048" 
+highlighted_border_color = "#5ea1ff"
+
+# Selection Styles
+# White text on the Cyberdream Blue background for high visibility
+selected_text_color = "#16181a"
+selected_bg_color = "#5ea1ff"
+
+# Graphing
+# Using the selection grey for the graph lines to keep it clean
+graph_color = "#3c4048"
