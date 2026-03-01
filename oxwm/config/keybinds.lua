@@ -34,12 +34,12 @@ oxwm.key.bind({ modkey, "Shift" }, "E", oxwm.spawn("sh -c ~/.config/oxwm/scripts
 
 oxwm.key.bind({ modkey, "Shift" }, "L", oxwm.spawn("sh -c ~/.config/oxwm/scripts/powermenu.sh"))
 
-oxwm.key.bind({ modkey }, "F7", oxwm.spawn({ "brightnessctl", "set", "+5%" }))
+oxwm.key.bind({ modkey }, "F7", oxwm.spawn("brightnessctl set +5%"))
 
-oxwm.key.bind({ modkey }, "F6", oxwm.spawn({ "brightnessctl", "set", "5%-" }))
+oxwm.key.bind({ modkey }, "F6", oxwm.spawn("brightnessctl set 5%-"))
 
-oxwm.key.bind({ modkey }, "F10", oxwm.spawn({ "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+" }))
+oxwm.key.bind({ modkey }, "F10", oxwm.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"))
 
-oxwm.key.bind({ modkey }, "F9", oxwm.spawn({ "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-" }))
+oxwm.key.bind({ modkey }, "F9", oxwm.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"))
 
-oxwm.key.bind({ modkey }, "F8", oxwm.spawn({ "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle" }))
+oxwm.key.bind({ modkey }, "F8", oxwm.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
