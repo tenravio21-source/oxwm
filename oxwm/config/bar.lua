@@ -8,7 +8,7 @@ local blocks = {
 		underline = false,
 	}),
 	oxwm.bar.block.ram({
-		format = "󰍛 Ram: {used}/{total} GB",
+		format = "󰍛 {used}G",
 		interval = 5,
 		color = colors.light_blue,
 		underline = true,
