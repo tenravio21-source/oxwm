@@ -20,9 +20,18 @@ return {
 			fzf_opts = {
 				["--no-scrollbar"] = true,
 				["--layout"] = "reverse",
+				["--no-unicode"] = false,
+				["--pointer"] = "",
+				["--marker"] = "󰄱",
 			},
 			defaults = {
+				prompt = "  ",
+				selected = "  ",
+				multi_icon = " 󰄱 ",
 				formatter = "path.dirname_first",
+				git_icons = true,
+				file_icons = "mini",
+				color_icons = true,
 				-- Pre-merged keymaps to avoid deep nesting overrides
 				keymap = {
 					fzf = {
@@ -46,7 +55,6 @@ return {
 			},
 			ui_select = function(fzf_opts, items)
 				return vim.tbl_deep_extend("force", fzf_opts, {
-					prompt = " ",
 					winopts = {
 						title = " " .. vim.trim((fzf_opts.prompt or "Select"):gsub("%s*:%s*$", "")) .. " ",
 						title_pos = "center",
@@ -63,6 +71,8 @@ return {
 				col = 0.5,
 				border = "rounded",
 				preview = {
+					width = 0.70,
+					hidden = "nohidden",
 					layout = "flex",
 					flex_flip = 100, -- Flip to vertical only if width < 100 columns
 					scrollbar = "float",

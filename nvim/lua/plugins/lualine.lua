@@ -16,7 +16,7 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{ "mode", icon = " ", padding = { left = 1, right = 1 } },
+					{ "mode", icon = " ", padding = { left = 1, right = 1 } },
 				},
 				lualine_b = {
 					{ "branch", icon = " ", padding = { left = 1, right = 1 } },
@@ -61,16 +61,16 @@ return {
 					},
 				},
 			},
-			winbar = {
-				lualine_a = {
-					{
-						"filename",
-						path = 1,
-						symbols = { modified = " ", readonly = " ", unnamed = "[No Name]" },
-						color = { gui = "bold" },
-					},
-				},
-			},
+			-- winbar = {
+			-- 	lualine_a = {
+			-- 		{
+			-- 			"filename",
+			-- 			path = 1,
+			-- 			symbols = { modified = " ", readonly = " ", unnamed = "[No Name]" },
+			-- 			color = { gui = "bold" },
+			-- 		},
+			-- 	},
+			-- },
 		})
 	end,
 }
