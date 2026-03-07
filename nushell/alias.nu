@@ -13,6 +13,7 @@ alias p = pwd
 #Editor
 alias v = nvim
 alias vi = nvims
+alias nc = with-env { NVIM_APPNAME: "NvChad" } { ^nvim }
 
 # Git (Enhanced)
 alias gc = git commit -m
