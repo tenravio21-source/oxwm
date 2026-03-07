@@ -1,4 +1,4 @@
-require "nvchad.options"
+require("nvchad.options")
 
 vim.o.shell = "nu"
 
@@ -10,7 +10,7 @@ vim.o.shell = "nu"
 -- Neovide settings (cleaner and more consistent)
 local g = vim.g
 if g.neovide then
-	g.neovide_opacity = 0.8
+	g.neovide_opacity = 1
 	g.neovide_cursor_animation_length = 0.13
 	g.neovide_cursor_trail_length = 0.00
 	g.neovide_cursor_trail_size = 0.3
