@@ -2,7 +2,7 @@ fork = false
 frame = "none"
 idle = true
 maximized = false
-no-multigrid = false
+no-multigrid = true
 srgb = false
 tabs = false
 theme = "auto"
@@ -12,4 +12,10 @@ wsl = false
 
 [font] 
 normal = "Maple Mono NF"
-size = 10.0
+size = 10.5
+
+[window]
+padding_top = 0
+padding_bottom = 0
+padding_left = 0
+padding_right = 0

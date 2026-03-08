@@ -10,7 +10,9 @@ vim.o.shell = "nu"
 -- Neovide settings (cleaner and more consistent)
 local g = vim.g
 if g.neovide then
-	vim.opt.linespace = 0
+	vim.opt.linespace = 1
+	vim.opt.display = "lastline"
+	vim.opt.cmdheight = 0
 	g.neovide_opacity = 1
 	g.neovide_cursor_animation_length = 0.13
 	g.neovide_cursor_trail_length = 0.00
